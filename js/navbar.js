@@ -14,8 +14,30 @@
 			navCloned.setAttribute('class', 'site-nav-wrap');
 			siteMobileMenuBody.appendChild(navCloned);
 		});
-
+		
 		setTimeout(function(){
+			
+			// Fungsi untuk menangani klik pada arrow
+			function toggleDropdown() {
+				// Ambil elemen dropdown yang sesuai dengan panah yang diklik
+				var targetId = this.getAttribute('data-target');
+				var dropdown = document.querySelector(targetId);
+			
+				// Periksa apakah dropdown saat ini tersembunyi atau ditampilkan
+				if (dropdown.classList.contains('collapse')) {
+				// Jika tersembunyi, tampilkan dropdown
+				dropdown.classList.remove('collapse');
+				} else {
+				// Jika ditampilkan, sembunyikan dropdown
+				dropdown.classList.add('collapse');
+				}
+			}
+			
+			// Tambahkan event listener ke setiap elemen panah
+			var arrowCollapseElements = document.querySelectorAll('.arrow-collapse');
+			arrowCollapseElements.forEach(function (arrowCollapse) {
+				arrowCollapse.addEventListener('click', toggleDropdown);
+			});
 
 			var hasChildrens = document.querySelector('.site-mobile-menu').querySelectorAll(' .has-children');
 
@@ -33,10 +55,6 @@
 				var arrowCollapse = hasChild.querySelector('.arrow-collapse');
 				arrowCollapse.setAttribute('data-toggle', 'collapse');
 				arrowCollapse.setAttribute('data-target', '#collapseItem' + counter);
-
-				var dropdown = hasChild.querySelector('.dropdown');
-				dropdown.setAttribute('class', 'collapse');
-				dropdown.setAttribute('id', 'collapseItem' + counter);
 
 				counter++;
 			});
