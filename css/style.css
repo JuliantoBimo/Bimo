@@ -2539,12 +2539,12 @@ textarea.form-control-lg {
   border-color: #9381ff; }
   .btn-primary:hover {
     color: #000;
-    background-color: #f38d61;
-    border-color: #f28658; }
+    background-color: transparent;
+    border-color: #9381ff; }
   .btn-check:focus + .btn-primary, .btn-primary:focus {
     color: #000;
-    background-color: #f38d61;
-    border-color: #f28658;
+    background-color: transparent;
+    border-color: #9381ff; }
     -webkit-box-shadow: 0 0 0 0.25rem rgba(205, 103, 59, 0.5);
     box-shadow: 0 0 0 0.25rem rgba(205, 103, 59, 0.5); }
   .btn-check:checked + .btn-primary,
